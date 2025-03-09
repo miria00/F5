@@ -6,7 +6,7 @@ import os
 
 import torch
 import torchaudio
-import wandb
+# import wandb
 from accelerate import Accelerator
 from accelerate.utils import DistributedDataParallelKwargs
 from ema_pytorch import EMA
@@ -39,7 +39,7 @@ class Trainer:
         max_grad_norm=1.0,
         noise_scheduler: str | None = None,
         duration_predictor: torch.nn.Module | None = None,
-        logger: str | None = "wandb",  # "wandb" | "tensorboard" | None
+        logger: str | None = None,  # "wandb" | "tensorboard" | None
         wandb_project="test_e2-tts",
         wandb_run_name="test_run",
         wandb_resume_id: str = None,
